@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
+| [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -15,4 +16,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
+| [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
 <!---LeetCode Topics End-->
