@@ -22,4 +22,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
 | [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
 | [0342-power-of-four](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0342-power-of-four/) | Easy |
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3798-largest-even-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3798-largest-even-number/) | Easy |
 <!---LeetCode Topics End-->
