@@ -30,6 +30,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
+| [0080-remove-duplicates-from-sorted-array-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0080-remove-duplicates-from-sorted-array-ii/) | Medium |
 | [1480-running-sum-of-1d-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1480-running-sum-of-1d-array/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
@@ -39,4 +40,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
+| [0080-remove-duplicates-from-sorted-array-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0080-remove-duplicates-from-sorted-array-ii/) | Medium |
 <!---LeetCode Topics End-->
