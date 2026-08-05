@@ -25,6 +25,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1108-defanging-an-ip-address](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1108-defanging-an-ip-address/) | Easy |
 | [3798-largest-even-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3798-largest-even-number/) | Easy |
 ## Array
 | Problem Name | Difficulty |
