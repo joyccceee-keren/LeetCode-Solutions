@@ -26,6 +26,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0125-valid-palindrome](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0125-valid-palindrome/) | Easy |
+| [0344-reverse-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0344-reverse-string/) | Easy |
 | [1108-defanging-an-ip-address](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1108-defanging-an-ip-address/) | Easy |
 | [3798-largest-even-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3798-largest-even-number/) | Easy |
 ## Array
@@ -51,6 +52,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0026-remove-duplicates-from-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0080-remove-duplicates-from-sorted-array-ii/) | Medium |
 | [0125-valid-palindrome](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0125-valid-palindrome/) | Easy |
+| [0344-reverse-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0344-reverse-string/) | Easy |
 | [0905-sort-array-by-parity](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0905-sort-array-by-parity/) | Easy |
 ## Sorting
 | Problem Name | Difficulty |
