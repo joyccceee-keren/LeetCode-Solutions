@@ -38,6 +38,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0001-two-sum](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0001-two-sum/) | Easy |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
 | [0053-maximum-subarray](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0053-maximum-subarray/) | Medium |
 | [0054-spiral-matrix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0054-spiral-matrix/) | Medium |
@@ -94,4 +95,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0054-spiral-matrix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0054-spiral-matrix/) | Medium |
 | [0059-spiral-matrix-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0059-spiral-matrix-ii/) | Medium |
 | [3498-reverse-degree-of-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3498-reverse-degree-of-a-string/) | Easy |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0001-two-sum](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0001-two-sum/) | Easy |
 <!---LeetCode Topics End-->
