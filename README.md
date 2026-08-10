@@ -35,6 +35,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0541-reverse-string-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0541-reverse-string-ii/) | Easy |
 | [0557-reverse-words-in-a-string-iii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0557-reverse-words-in-a-string-iii/) | Easy |
 | [1108-defanging-an-ip-address](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1108-defanging-an-ip-address/) | Easy |
+| [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 | [3498-reverse-degree-of-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3498-reverse-degree-of-a-string/) | Easy |
 | [3794-reverse-string-prefix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3794-reverse-string-prefix/) | Easy |
 | [3798-largest-even-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3798-largest-even-number/) | Easy |
@@ -114,6 +115,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0242-valid-anagram](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0242-valid-anagram/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0387-first-unique-character-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0387-first-unique-character-in-a-string/) | Easy |
+| [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -127,4 +129,9 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0387-first-unique-character-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0387-first-unique-character-in-a-string/) | Easy |
+| [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
+## Sliding Window
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 <!---LeetCode Topics End-->
