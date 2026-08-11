@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0050-powx-n](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0050-powx-n/) | Medium |
+| [0202-happy-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0202-happy-number/) | Easy |
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
 | [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
 | [0342-power-of-four](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0342-power-of-four/) | Easy |
@@ -69,6 +70,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0125-valid-palindrome](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0125-valid-palindrome/) | Easy |
 | [0151-reverse-words-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0151-reverse-words-in-a-string/) | Medium |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0167-two-sum-ii-input-array-is-sorted/) | Medium |
+| [0202-happy-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0202-happy-number/) | Easy |
 | [0344-reverse-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0344-reverse-string/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0541-reverse-string-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0541-reverse-string-ii/) | Easy |
@@ -114,6 +116,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0001-two-sum](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0001-two-sum/) | Easy |
 | [0003-longest-substring-without-repeating-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0003-longest-substring-without-repeating-characters/) | Medium |
 | [0049-group-anagrams](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0049-group-anagrams/) | Medium |
+| [0202-happy-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0202-happy-number/) | Easy |
 | [0242-valid-anagram](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0242-valid-anagram/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0387-first-unique-character-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0387-first-unique-character-in-a-string/) | Easy |
@@ -137,4 +140,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0003-longest-substring-without-repeating-characters/) | Medium |
 | [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
+## Floyd's Cycle Finding Algorithm
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0202-happy-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0202-happy-number/) | Easy |
 <!---LeetCode Topics End-->
