@@ -6,6 +6,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0009-palindrome-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0009-palindrome-number/) | Easy |
 | [0050-powx-n](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0050-powx-n/) | Medium |
 | [0202-happy-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0202-happy-number/) | Easy |
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
