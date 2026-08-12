@@ -11,6 +11,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
 | [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
 | [0342-power-of-four](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0342-power-of-four/) | Easy |
+| [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -34,6 +35,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0242-valid-anagram](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0242-valid-anagram/) | Easy |
 | [0344-reverse-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0344-reverse-string/) | Easy |
 | [0387-first-unique-character-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0387-first-unique-character-in-a-string/) | Easy |
+| [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
 | [0541-reverse-string-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0541-reverse-string-ii/) | Easy |
 | [0557-reverse-words-in-a-string-iii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0557-reverse-words-in-a-string-iii/) | Easy |
 | [1108-defanging-an-ip-address](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1108-defanging-an-ip-address/) | Easy |
@@ -109,6 +111,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0054-spiral-matrix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0054-spiral-matrix/) | Medium |
 | [0059-spiral-matrix-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0059-spiral-matrix-ii/) | Medium |
+| [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
 | [3498-reverse-degree-of-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3498-reverse-degree-of-a-string/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
