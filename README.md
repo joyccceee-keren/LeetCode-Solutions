@@ -12,6 +12,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
 | [0342-power-of-four](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0342-power-of-four/) | Easy |
 | [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
+| [1523-count-odd-numbers-in-an-interval-range](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1523-count-odd-numbers-in-an-interval-range/) | Easy |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
