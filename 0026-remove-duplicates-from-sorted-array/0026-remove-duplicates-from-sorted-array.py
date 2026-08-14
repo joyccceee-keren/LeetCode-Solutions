@@ -3,6 +3,7 @@ class Solution:
         n = len(nums)
 
         start = 0
+
         for i in range(1,n):
             #unique element
             if nums[i]!=nums[start]:
@@ -10,8 +11,4 @@ class Solution:
                 nums[start] = nums[i]
 
         return start+1        
-
-
-
-
         
