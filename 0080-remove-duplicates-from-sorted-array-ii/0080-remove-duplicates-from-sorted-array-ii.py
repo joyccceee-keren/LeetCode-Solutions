@@ -3,7 +3,7 @@ class Solution:
         n = len(nums)
 
         if n<=2:
-            return
+            return n
 
         start = 1
         for i in range(2,n):
@@ -12,9 +12,7 @@ class Solution:
                 start+=1
                 nums[start] = nums[i]
 
-        return start+1        
+        return start+1    
 
 
-
-
-        
+       
