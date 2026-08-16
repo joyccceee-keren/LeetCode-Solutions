@@ -5,13 +5,13 @@ class Solution:
 
         for i in range(len(nums)):
             curr_sum+=nums[i]
-            if curr_sum>max_sum:
-                max_sum = curr_sum
+            if curr_sum> max_sum:
+                 max_sum = curr_sum
             if curr_sum<0:
-                curr_sum = 0     
+                curr_sum = 0
 
+        return max_sum            
 
-        return max_sum        
-
+        
 
         
