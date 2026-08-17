@@ -4,17 +4,15 @@ class Solution:
 
         if n<=2:
             return n
+
         start = 1
-
         for i in range(2,n):
-            #unique elements
-            if nums[i]!=nums[start-1]:
-                start+=1
-                nums[start]=nums[i]
+            if nums[i] != nums[start-1]:
+               start += 1
+               nums[start] = nums[i]
 
-        return start+1        
-
-
-
+        return start+1    
 
        
+
+        
