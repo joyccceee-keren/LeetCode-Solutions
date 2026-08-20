@@ -9,4 +9,4 @@ class Solution:
             rev = rev*10+r
 
         return rev==x    
-        
+       
