@@ -1,0 +1,609 @@
+[
+  {
+    "title": "Two Sum",
+    "number": 1,
+    "url": "https://leetcode.com/problems/two-sum",
+    "difficulty": "Easy",
+    "description": "<p>You are given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>\n\n<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>\n\n<p>You can return the answer in any order.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,7,11,15], target = 9\n<strong>Output:</strong> [0,1]\n<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,4], target = 6\n<strong>Output:</strong> [1,2]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,3], target = 6\n<strong>Output:</strong> [0,1]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>\n\t<li><strong>Only one valid answer exists.</strong></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code><font face=\"monospace\">&nbsp;</font>time complexity?",
+    "topics": [
+      "Array",
+      "Hash Table"
+    ],
+    "id": "0001-two-sum",
+    "code": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        n = len(nums)\n        dict1 = {}\n\n        for i in range(n):\n            rem = target - nums[i]\n            if rem in dict1:\n                return [dict1[rem],i]\n\n            dict1[nums[i]] = i    \n\n\n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Longest Substring Without Repeating Characters",
+    "number": 3,
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters",
+    "difficulty": "Medium",
+    "description": "<p>Given a string <code>s</code>, find the length of the <strong>longest</strong> <span data-keyword=\"substring-nonempty\"><strong>substring</strong></span> without duplicate characters.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;abcabcbb&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The answer is &quot;abc&quot;, with the length of 3. Note that <code>&quot;bca&quot;</code> and <code>&quot;cab&quot;</code> are also correct answers.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;bbbbb&quot;\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The answer is &quot;b&quot;, with the length of 1.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;pwwkew&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The answer is &quot;wke&quot;, with the length of 3.\nNotice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>\n</ul>",
+    "topics": [
+      "Hash Table",
+      "Sliding Window",
+      "String"
+    ],
+    "id": "0003-longest-substring-without-repeating-characters",
+    "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        n = len(s)\n        if n==0:\n            return 0\n\n        ans = 1\n        set1 = set({})\n        set1.add(s[0])\n\n        i = 0\n        j = 1\n\n        while j<n:\n            while s[j] in set1:\n                set1.discard(s[i])\n                i+=1\n            set1.add(s[j])\n            j+=1\n            ans = max(ans,(j-i))\n\n        return ans        \n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Palindrome Number",
+    "number": 9,
+    "url": "https://leetcode.com/problems/palindrome-number",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer <code>x</code>, return <code>true</code> if <code>x</code> is a <span data-keyword=\"palindrome-integer\"><strong>palindrome</strong></span>, and <code>false</code> otherwise.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 121\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 121 reads as 121 from left to right and from right to left.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = -121\n<strong>Output:</strong> false\n<strong>Explanation:</strong> From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 10\n<strong>Output:</strong> false\n<strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup>&nbsp;&lt;= x &lt;= 2<sup>31</sup>&nbsp;- 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without converting the integer to a string?",
+    "topics": [
+      "Math"
+    ],
+    "id": "0009-palindrome-number",
+    "code": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        temp = x\n        rev = 0\n\n        while temp>0:\n            r = temp%10\n            temp//=10\n            rev = rev*10+r\n\n        return rev==x    \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Remove Duplicates from Sorted Array",
+    "number": 26,
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\"><strong>in-place</strong></a> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>\n\n<p>Consider the number of <em>unique elements</em> in&nbsp;<code>nums</code> to be <code>k<strong>​​​​​​​</strong></code>​​​​​​​. <meta charset=\"UTF-8\" />After removing duplicates, return the number of unique elements&nbsp;<code>k</code>.</p>\n\n<p><meta charset=\"UTF-8\" />The first&nbsp;<code>k</code>&nbsp;elements of&nbsp;<code>nums</code>&nbsp;should contain the unique numbers in <strong>sorted order</strong>. The remaining elements beyond index&nbsp;<code>k - 1</code>&nbsp;can be ignored.</p>\n\n<p><strong>Custom Judge:</strong></p>\n\n<p>The judge will test your solution with the following code:</p>\n\n<pre>\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i &lt; k; i++) {\n    assert nums[i] == expectedNums[i];\n}\n</pre>\n\n<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2]\n<strong>Output:</strong> 2, nums = [1,2,_]\n<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]\n<strong>Output:</strong> 5, nums = [0,1,2,3,4,_,_,_,_,_]\n<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>\n\t<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>\n</ul>",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "id": "0026-remove-duplicates-from-sorted-array",
+    "code": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        n = len(nums)\n\n        start = 0\n\n        for i in range(1,n):\n            if nums[i]!=nums[start]:\n               start +=1\n               nums[start] = nums[i]\n\n        return start+1    \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Group Anagrams",
+    "number": 49,
+    "url": "https://leetcode.com/problems/group-anagrams",
+    "difficulty": "Medium",
+    "description": "<p>Given an array of strings <code>strs</code>, group the <span data-keyword=\"anagram\">anagrams</span> together. You can return the answer in <strong>any order</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">strs = [&quot;eat&quot;,&quot;tea&quot;,&quot;tan&quot;,&quot;ate&quot;,&quot;nat&quot;,&quot;bat&quot;]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>There is no string in strs that can be rearranged to form <code>&quot;bat&quot;</code>.</li>\n\t<li>The strings <code>&quot;nat&quot;</code> and <code>&quot;tan&quot;</code> are anagrams as they can be rearranged to form each other.</li>\n\t<li>The strings <code>&quot;ate&quot;</code>, <code>&quot;eat&quot;</code>, and <code>&quot;tea&quot;</code> are anagrams as they can be rearranged to form each other.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">strs = [&quot;&quot;]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[[&quot;&quot;]]</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">strs = [&quot;a&quot;]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[[&quot;a&quot;]]</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= strs.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>\n\t<li><code>strs[i]</code> consists of lowercase English letters.</li>\n</ul>",
+    "topics": [
+      "Array",
+      "Hash Table",
+      "Sorting",
+      "String"
+    ],
+    "id": "0049-group-anagrams",
+    "code": "class Solution:\n    def sortString(self,s):\n        s1 = list(s)\n        s1.sort()\n        return\"\".join(s1)\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        dict1 = {}\n\n        for s in strs:\n            key = self.sortString(s)\n            print(key)\n            if key in dict1:\n                dict1[key].append(s)\n            else:\n                dict1[key] = [s]  \n\n        return list(dict1.values())          \n         \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Pow(x, n)",
+    "number": 50,
+    "url": "https://leetcode.com/problems/powx-n",
+    "difficulty": "Medium",
+    "description": "<p>Implement <a href=\"http://www.cplusplus.com/reference/valarray/pow/\" target=\"_blank\">pow(x, n)</a>, which calculates <code>x</code> raised to the power <code>n</code> (i.e., <code>x<sup>n</sup></code>).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 2.00000, n = 10\n<strong>Output:</strong> 1024.00000\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 2.10000, n = 3\n<strong>Output:</strong> 9.26100\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 2.00000, n = -2\n<strong>Output:</strong> 0.25000\n<strong>Explanation:</strong> 2<sup>-2</sup> = 1/2<sup>2</sup> = 1/4 = 0.25\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-100.0 &lt; x &lt; 100.0</code></li>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup>-1</code></li>\n\t<li><code>n</code> is an integer.</li>\n\t<li>Either <code>x</code> is not zero or <code>n &gt; 0</code>.</li>\n\t<li><code>-10<sup>4</sup> &lt;= x<sup>n</sup> &lt;= 10<sup>4</sup></code></li>\n</ul>",
+    "topics": [
+      "Math",
+      "Recursion"
+    ],
+    "id": "0050-powx-n",
+    "code": "class Solution:\n    def findPow(self, x,n):\n        #base case\n        if n==0:\n            return 1\n        #recursive case\n        a = self.findPow(x,n//2)\n        if n%2==0:\n            return a*a\n        else:\n            return a*a*x        \n    def myPow(self, x: float, n: int) -> float:\n        if n>=0:\n            return self.findPow(x,n)\n        else:\n            return 1/self.findPow(x,n*(-1))    \n\n",
+    "language": "python"
+  },
+  {
+    "title": "Maximum Subarray",
+    "number": 53,
+    "url": "https://leetcode.com/problems/maximum-subarray",
+    "difficulty": "Medium",
+    "description": "<p>Given an integer array <code>nums</code>, find the <span data-keyword=\"subarray-nonempty\">subarray</span> with the largest sum, and return <em>its sum</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-2,1,-3,4,-1,2,1,-5,4]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> The subarray [4,-1,2,1] has the largest sum 6.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The subarray [1] has the largest sum 1.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,4,-1,7,8]\n<strong>Output:</strong> 23\n<strong>Explanation:</strong> The subarray [5,4,-1,7,8] has the largest sum 23.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> If you have figured out the <code>O(n)</code> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>",
+    "topics": [
+      "Array",
+      "Divide and Conquer",
+      "Dynamic Programming"
+    ],
+    "id": "0053-maximum-subarray",
+    "code": "class Solution:\n    def maxSubArray(self, nums: List[int]) -> int:\n        curr_sum = 0\n        max_sum = nums[0]\n\n        for i in range(len(nums)):\n            curr_sum+=nums[i]\n            if curr_sum> max_sum:\n                 max_sum = curr_sum\n            if curr_sum<0:\n                curr_sum = 0\n\n        return max_sum            \n\n        \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Spiral Matrix",
+    "number": 54,
+    "url": "https://leetcode.com/problems/spiral-matrix/",
+    "difficulty": "Medium",
+    "description": "<p>Given an <code>m x n</code> <code>matrix</code>, return <em>all elements of the</em> <code>matrix</code> <em>in spiral order</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg\" style=\"width: 242px; height: 242px;\" />\n<pre>\n<strong>Input:</strong> matrix = [[1,2,3],[4,5,6],[7,8,9]]\n<strong>Output:</strong> [1,2,3,6,9,8,7,4,5]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg\" style=\"width: 322px; height: 242px;\" />\n<pre>\n<strong>Input:</strong> matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]\n<strong>Output:</strong> [1,2,3,4,8,12,11,10,9,5,6,7]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>m == matrix.length</code></li>\n\t<li><code>n == matrix[i].length</code></li>\n\t<li><code>1 &lt;= m, n &lt;= 10</code></li>\n\t<li><code>-100 &lt;= matrix[i][j] &lt;= 100</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Matrix",
+      "Simulation"
+    ],
+    "id": "0054-spiral-matrix",
+    "code": "class Solution:\n    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:\n        n = len(matrix)\n        m = len(matrix[0])\n\n        total = n*m\n        ans = []\n        c = 0\n\n        colstart = 0\n        rowstart = 0\n        colend = m-1\n        rowend = n-1\n\n        \n        while c<total:\n            #rowstart ,colstart->colend\n            for i in range(colstart,colend+1):\n                ans.append(matrix[rowstart][i])\n                c+=1\n            rowstart+=1    \n\n            if c==total:\n                break \n\n            #colend, rowstart->rowend\n            for i in range(rowstart,rowend+1):\n                ans.append(matrix[i][colend])\n                c+=1\n            colend-=1\n\n            if c==total:\n                break   \n\n            #rowend colend->colstart\n            for i in range(colend,colstart-1,-1):\n                ans.append(matrix[rowend][i])\n                c+=1\n            rowend-=1\n\n            if c==total:\n                break \n\n            #colstart, rowend->rowstart\n            for i in range(rowend,rowstart-1,-1):\n                ans.append(matrix[i][colstart])\n                c+=1\n            colstart+=1\n\n        return ans    \n\n\n\n\n\n\n\n\n\n\n\n            \n\n\n\n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Length of Last Word",
+    "number": 58,
+    "url": "https://leetcode.com/problems/length-of-last-word",
+    "difficulty": "Easy",
+    "description": "<p>Given a string <code>s</code> consisting of words and spaces, return <em>the length of the <strong>last</strong> word in the string.</em></p>\n\n<p>A <strong>word</strong> is a maximal <span data-keyword=\"substring-nonempty\">substring</span> consisting of non-space characters only.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Hello World&quot;\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> The last word is &quot;World&quot; with length 5.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;   fly me   to   the moon  &quot;\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> The last word is &quot;moon&quot; with length 4.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;luffy is still joyboy&quot;\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> The last word is &quot;joyboy&quot; with length 6.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of only English letters and spaces <code>&#39; &#39;</code>.</li>\n\t<li>There will be at least one word in <code>s</code>.</li>\n</ul>",
+    "topics": [
+      "String"
+    ],
+    "id": "0058-length-of-last-word",
+    "code": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        s = s.strip()\n        n = len(s)\n\n        i = -1\n        while i>=(-1*n) and s[i]!=\" \":\n            i-=1\n\n        i+=1\n        i*=-1\n\n        return i\n\n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Spiral Matrix II",
+    "number": 59,
+    "url": "https://leetcode.com/problems/spiral-matrix-ii",
+    "difficulty": "Medium",
+    "description": "<p>Given a positive integer <code>n</code>, generate an <code>n x n</code> <code>matrix</code> filled with elements from <code>1</code> to <code>n<sup>2</sup></code> in spiral order.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg\" style=\"width: 242px; height: 242px;\" />\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> [[1,2,3],[8,9,4],[7,6,5]]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1\n<strong>Output:</strong> [[1]]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 20</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Matrix",
+      "Simulation"
+    ],
+    "id": "0059-spiral-matrix-ii",
+    "code": "class Solution:\n    def generateMatrix(self, n: int) -> List[List[int]]:\n        matrix =[[0] * n for _ in range(n)]\n\n        rowstart = 0\n        rowend = n-1\n        colstart = 0\n        colend = n-1\n\n        num = 1\n\n        while rowstart<=rowend and colstart<=colend:\n\n             #rowstart ,colstart->colend\n            for i in range(colstart,colend+1):\n                matrix[rowstart][i] = num\n                num+=1\n            rowstart+=1\n\n            #colend , rowstart->rowend\n            for i in range(rowstart,rowend+1):\n                 matrix[i][colend] = num\n                 num+=1\n            colend-=1\n\n            #rowend, colend->colstart\n            for i in range(colend,colstart-1,-1):\n                matrix[rowend][i] = num\n                num+=1\n            rowend-=1\n\n            #colstart ,rowend->rowstart\n            for i in range(rowend,rowstart-1,-1):\n                matrix[i][colstart] = num\n                num+=1\n            colstart+=1\n\n        return matrix      \n                    \n\n\n\n\n        \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Remove Duplicates from Sorted Array II",
+    "number": 80,
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii",
+    "difficulty": "Medium",
+    "description": "<p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove some duplicates <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\"><strong>in-place</strong></a> such that each unique element appears <strong>at most twice</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>\n\n<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code>&nbsp;should hold the final result. It does not matter what you leave beyond the first&nbsp;<code>k</code>&nbsp;elements.</p>\n\n<p>Return <code>k</code><em> after placing the final result in the first </em><code>k</code><em> slots of </em><code>nums</code>.</p>\n\n<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\">in-place</a></strong> with O(1) extra memory.</p>\n\n<p><strong>Custom Judge:</strong></p>\n\n<p>The judge will test your solution with the following code:</p>\n\n<pre>\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i &lt; k; i++) {\n    assert nums[i] == expectedNums[i];\n}\n</pre>\n\n<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,1,2,2,3]\n<strong>Output:</strong> 5, nums = [1,1,2,2,3,_]\n<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,0,1,1,1,1,2,3,3]\n<strong>Output:</strong> 7, nums = [0,0,1,1,2,3,3,_,_]\n<strong>Explanation:</strong> Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>\n</ul>",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "id": "0080-remove-duplicates-from-sorted-array-ii",
+    "code": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        n = len(nums)\n\n        if n<=2:\n            return n\n\n        start = 1\n        for i in range(2,n):\n            if nums[i] != nums[start-1]:\n               start += 1\n               nums[start] = nums[i]\n\n        return start+1    \n\n       \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Best Time to Buy and Sell Stock",
+    "number": 121,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock",
+    "difficulty": "Easy",
+    "description": "<p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>\n\n<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock.</p>\n\n<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <code>0</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,1,5,3,6,4]\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,6,4,3,1]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> In this case, no transactions are done and the max profit = 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= prices.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "id": "0121-best-time-to-buy-and-sell-stock",
+    "code": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        min_price = prices[0]\n        profit = 0\n\n        for i in range(1,len(prices)):\n            curr_profit = prices[i] - min_price\n            if curr_profit>profit:\n                profit = curr_profit\n            min_price = min(min_price,prices[i])\n        return profit        \n        \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Best Time to Buy and Sell Stock II",
+    "number": 122,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii",
+    "difficulty": "Medium",
+    "description": "<p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>\n\n<p>On each day, you may decide to buy and/or sell the stock. You can only hold <strong>at most one</strong> share of the stock at any time. However, you can sell and buy the stock multiple times on the <strong>same day</strong>, ensuring you never hold more than one share of the stock.</p>\n\n<p>Find and return <em>the <strong>maximum</strong> profit you can achieve</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,1,5,3,6,4]\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.\nThen buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.\nTotal profit is 4 + 3 = 7.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [1,2,3,4,5]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.\nTotal profit is 4.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,6,4,3,1]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= prices.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "id": "0122-best-time-to-buy-and-sell-stock-ii",
+    "code": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        profit = 0\n        n = len(prices)\n\n        for i in range(n-1):\n            if prices[i+1]>prices[i]:\n                profit += (prices[i+1]-prices[i])\n\n        return profit        \n\n            \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Valid Palindrome",
+    "number": 125,
+    "url": "https://leetcode.com/problems/valid-palindrome",
+    "difficulty": "Easy",
+    "description": "<p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>\n\n<p>Given a string <code>s</code>, return <code>true</code><em> if it is a <strong>palindrome</strong>, or </em><code>false</code><em> otherwise</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;A man, a plan, a canal: Panama&quot;\n<strong>Output:</strong> true\n<strong>Explanation:</strong> &quot;amanaplanacanalpanama&quot; is a palindrome.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;race a car&quot;\n<strong>Output:</strong> false\n<strong>Explanation:</strong> &quot;raceacar&quot; is not a palindrome.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot; &quot;\n<strong>Output:</strong> true\n<strong>Explanation:</strong> s is an empty string &quot;&quot; after removing non-alphanumeric characters.\nSince an empty string reads the same forward and backward, it is a palindrome.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>\n\t<li><code>s</code> consists only of printable ASCII characters.</li>\n</ul>",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "id": "0125-valid-palindrome",
+    "code": "class Solution:\n    def isAlphanumeric(self, s):\n        x = ord(s)\n        if 97<=x<=122 or 65<=x<=90 or 48<=x<=57:\n            return True\n        return False    \n    def isPalindrome(self, s: str) -> bool:\n        s = s.lower()\n\n        i = 0\n        j = len(s)-1\n\n        while i<j:\n            if not self.isAlphanumeric(s[i]):\n                i+=1\n            elif not self.isAlphanumeric(s[j]):\n                j-=1     \n            elif s[i] == s[j]:\n                i+=1\n                j-=1\n            else:\n                return False\n        \n        return True\n\n\n        \n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Reverse Words in a String",
+    "number": 151,
+    "url": "https://leetcode.com/problems/reverse-words-in-a-string",
+    "difficulty": "Medium",
+    "description": "<p>Given an input string <code>s</code>, reverse the order of the <strong>words</strong>.</p>\n\n<p>A <strong>word</strong> is defined as a sequence of non-space characters. The <strong>words</strong> in <code>s</code> will be separated by at least one space.</p>\n\n<p>Return <em>a string of the words in reverse order concatenated by a single space.</em></p>\n\n<p><b>Note</b> that <code>s</code> may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;the sky is blue&quot;\n<strong>Output:</strong> &quot;blue is sky the&quot;\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;  hello world  &quot;\n<strong>Output:</strong> &quot;world hello&quot;\n<strong>Explanation:</strong> Your reversed string should not contain leading or trailing spaces.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;a good   example&quot;\n<strong>Output:</strong> &quot;example good a&quot;\n<strong>Explanation:</strong> You need to reduce multiple spaces between two words to a single space in the reversed string.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> contains English letters (upper-case and lower-case), digits, and spaces <code>&#39; &#39;</code>.</li>\n\t<li>There is <strong>at least one</strong> word in <code>s</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><b data-stringify-type=\"bold\">Follow-up:&nbsp;</b>If the string data type is mutable in your language, can&nbsp;you solve it&nbsp;<b data-stringify-type=\"bold\">in-place</b>&nbsp;with&nbsp;<code data-stringify-type=\"code\">O(1)</code>&nbsp;extra space?</p>",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "id": "0151-reverse-words-in-a-string",
+    "code": "class Solution:\n    def reverseWords(self, s: str) -> str:\n        s = s.strip()\n        s = s.split()\n        s.reverse()\n        return\" \".join(s)\n\n     \n\n   \n        \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Two Sum II - Input Array Is Sorted",
+    "number": 167,
+    "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted",
+    "difficulty": "Medium",
+    "description": "<p>Given a <strong>1-indexed</strong> array of integers <code>numbers</code> that is already <strong><em>sorted in non-decreasing order</em></strong>, find two numbers such that they add up to a specific <code>target</code> number. Let these two numbers be <code>numbers[index<sub>1</sub>]</code> and <code>numbers[index<sub>2</sub>]</code> where <code>1 &lt;= index<sub>1</sub> &lt; index<sub>2</sub> &lt;= numbers.length</code>.</p>\n\n<p>Return<em> the indices of the two numbers&nbsp;</em><code>index<sub>1</sub></code><em> and </em><code>index<sub>2</sub></code><em>, <strong>each incremented by one,</strong> as an integer array </em><code>[index<sub>1</sub>, index<sub>2</sub>]</code><em> of length 2.</em></p>\n\n<p>The tests are generated such that there is <strong>exactly one solution</strong>. You <strong>may not</strong> use the same element twice.</p>\n\n<p>Your solution must use only constant extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> numbers = [<u>2</u>,<u>7</u>,11,15], target = 9\n<strong>Output:</strong> [1,2]\n<strong>Explanation:</strong> The sum of 2 and 7 is 9. Therefore, index<sub>1</sub> = 1, index<sub>2</sub> = 2. We return [1, 2].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> numbers = [<u>2</u>,3,<u>4</u>], target = 6\n<strong>Output:</strong> [1,3]\n<strong>Explanation:</strong> The sum of 2 and 4 is 6. Therefore index<sub>1</sub> = 1, index<sub>2</sub> = 3. We return [1, 3].\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> numbers = [<u>-1</u>,<u>0</u>], target = -1\n<strong>Output:</strong> [1,2]\n<strong>Explanation:</strong> The sum of -1 and 0 is -1. Therefore index<sub>1</sub> = 1, index<sub>2</sub> = 2. We return [1, 2].\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= numbers.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-1000 &lt;= numbers[i] &lt;= 1000</code></li>\n\t<li><code>numbers</code> is sorted in <strong>non-decreasing order</strong>.</li>\n\t<li><code>-1000 &lt;= target &lt;= 1000</code></li>\n\t<li>The tests are generated such that there is <strong>exactly one solution</strong>.</li>\n</ul>",
+    "topics": [
+      "Array",
+      "Binary Search",
+      "Two Pointers"
+    ],
+    "id": "0167-two-sum-ii-input-array-is-sorted",
+    "code": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        left = 0\n        right = len(nums)-1\n\n        while left<right:\n            sum1 = nums[left] + nums[right]\n            if sum1 == target:\n                return [left+1,right+1]\n            elif sum1>target:\n                right-=1   \n            else:\n                left+=1\n",
+    "language": "python"
+  },
+  {
+    "title": "Happy Number",
+    "number": 202,
+    "url": "https://leetcode.com/problems/happy-number",
+    "difficulty": "Easy",
+    "description": "<p>Write an algorithm to determine if a number <code>n</code> is happy.</p>\n\n<p>A <strong>happy number</strong> is a number defined by the following process:</p>\n\n<ul>\n\t<li>Starting with any positive integer, replace the number by the sum of the squares of its digits.</li>\n\t<li>Repeat the process until the number equals 1 (where it will stay), or it <strong>loops endlessly in a cycle</strong> which does not include 1.</li>\n\t<li>Those numbers for which this process <strong>ends in 1</strong> are happy.</li>\n</ul>\n\n<p>Return <code>true</code> <em>if</em> <code>n</code> <em>is a happy number, and</em> <code>false</code> <em>if not</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 19\n<strong>Output:</strong> true\n<strong>Explanation:</strong>\n1<sup>2</sup> + 9<sup>2</sup> = 82\n8<sup>2</sup> + 2<sup>2</sup> = 68\n6<sup>2</sup> + 8<sup>2</sup> = 100\n1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> false\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>",
+    "topics": [
+      "Floyd's Cycle Finding Algorithm",
+      "Hash Table",
+      "Math",
+      "Two Pointers"
+    ],
+    "id": "0202-happy-number",
+    "code": "class Solution:\n    def isHappy(self, n: int) -> bool:\n        def get_next(num):\n            total = 0\n            while num > 0:\n                digit = num % 10\n                total += digit * digit\n\n                num //= 10\n            return total\n\n        slow = n\n        fast = get_next(n)\n\n        while fast != 1 and slow != fast:\n            slow = get_next(slow)\n            fast = get_next(get_next(fast))\n\n        return fast == 1            \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Contains Duplicate",
+    "number": 217,
+    "url": "https://leetcode.com/problems/contains-duplicate",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The element 1 occurs at the indices 0 and 3.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3,4]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">false</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>All elements are distinct.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,1,1,3,3,4,3,2,4,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Hash Table",
+      "Sorting"
+    ],
+    "id": "0217-contains-duplicate",
+    "code": "class Solution:\n    def containsDuplicate(self, nums: List[int]) -> bool:\n       seen = set()\n\n       for n in nums:\n        if n in seen: return True\n        seen.add(n)\n\n       return False    ",
+    "language": "python"
+  },
+  {
+    "title": "Power of Two",
+    "number": 231,
+    "url": "https://leetcode.com/problems/power-of-two",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of two. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of two, if there exists an integer <code>x</code> such that <code>n == 2<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1\n<strong>Output:</strong> true\n<strong>Explanation: </strong>2<sup>0</sup> = 1\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 16\n<strong>Output:</strong> true\n<strong>Explanation: </strong>2<sup>4</sup> = 16\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> false\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+    "topics": [
+      "Bit Manipulation",
+      "Math",
+      "Recursion"
+    ],
+    "id": "0231-power-of-two",
+    "code": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        #base case\n        if n==0:\n            return False\n        if n==1:\n            return True\n        if n%2!=0:\n            return False\n\n        #recursive case\n        return self.isPowerOfTwo(n//2)           \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Valid Anagram",
+    "number": 242,
+    "url": "https://leetcode.com/problems/valid-anagram",
+    "difficulty": "Easy",
+    "description": "<p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code> if <code>t</code> is an <span data-keyword=\"anagram\">anagram</span> of <code>s</code>, and <code>false</code> otherwise.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;rat&quot;, t = &quot;car&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">false</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length, t.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>s</code> and <code>t</code> consist of lowercase English letters.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> What if the inputs contain Unicode characters? How would you adapt your solution to such a case?</p>",
+    "topics": [
+      "Hash Table",
+      "Sorting",
+      "String"
+    ],
+    "id": "0242-valid-anagram",
+    "code": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        if len(s) != len(t):\n            return False\n\n        freq = {}\n        for i in s:\n            if i not in freq:\n                freq[i] = 1\n            else:\n                freq[i] += 1\n\n        for i in t:\n            if i not in freq:\n                return False\n            else:\n                freq[i] -= 1\n        for i in freq.values():\n            if i != 0:\n                return False\n        return True\n",
+    "language": "python"
+  },
+  {
+    "title": "Power of Three",
+    "number": 326,
+    "url": "https://leetcode.com/problems/power-of-three",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of three. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of three, if there exists an integer <code>x</code> such that <code>n == 3<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 27\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 27 = 3<sup>3</sup>\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 0\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no x where 3<sup>x</sup> = 0.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = -1\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no x where 3<sup>x</sup> = (-1).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+    "topics": [
+      "Math",
+      "Recursion"
+    ],
+    "id": "0326-power-of-three",
+    "code": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        #base case\n        if n<=0:\n            return False\n        if n==1:\n            return True\n        if n%3!=0:\n            return False\n\n        #recursive case\n        return self.isPowerOfThree(n//3)        \n            \n\n\n       ",
+    "language": "python"
+  },
+  {
+    "title": "Power of Four",
+    "number": 342,
+    "url": "https://leetcode.com/problems/power-of-four",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of four. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of four, if there exists an integer <code>x</code> such that <code>n == 4<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> n = 16\n<strong>Output:</strong> true\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> n = 5\n<strong>Output:</strong> false\n</pre><p><strong class=\"example\">Example 3:</strong></p>\n<pre><strong>Input:</strong> n = 1\n<strong>Output:</strong> true\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+    "topics": [
+      "Bit Manipulation",
+      "Math",
+      "Recursion"
+    ],
+    "id": "0342-power-of-four",
+    "code": "class Solution:\n    def isPowerOfFour(self, n: int) -> bool:\n        #base case\n        if n<=0:\n            return False\n        if n==1:\n            return True\n        if n%4!=0:\n            return False\n\n        #recursive case\n        return self.isPowerOfFour(n//4)           \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Reverse String",
+    "number": 344,
+    "url": "https://leetcode.com/problems/reverse-string",
+    "difficulty": "Easy",
+    "description": "<p>Write a function that reverses a string. The input string is given as an array of characters <code>s</code>.</p>\n\n<p>You must do this by modifying the input array <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\">in-place</a> with <code>O(1)</code> extra memory.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> s = [\"h\",\"e\",\"l\",\"l\",\"o\"]\n<strong>Output:</strong> [\"o\",\"l\",\"l\",\"e\",\"h\"]\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> s = [\"H\",\"a\",\"n\",\"n\",\"a\",\"h\"]\n<strong>Output:</strong> [\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"]\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s[i]</code> is a <a href=\"https://en.wikipedia.org/wiki/ASCII#Printable_characters\" target=\"_blank\">printable ascii character</a>.</li>\n</ul>",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "id": "0344-reverse-string",
+    "code": "class Solution:\n    def reverseString(self, s: List[str]) -> None:\n        \"\"\"\n        Do not return anything, modify s in-place instead.\n        \"\"\"\n        i = 0\n        j = len(s)-1\n\n        while i<j:\n           temp = s[i]\n           s[i] = s[j]\n           s[j] = temp\n           i+=1\n           j-=1\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Intersection of Two Arrays",
+    "number": 349,
+    "url": "https://leetcode.com/problems/intersection-of-two-arrays",
+    "difficulty": "Easy",
+    "description": "<p>Given two integer arrays <code>nums1</code> and <code>nums2</code>, return <em>an array of their <span data-keyword=\"array-intersection\">intersection</span></em>. Each element in the result must be <strong>unique</strong> and you may return the result in <strong>any order</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,2,2,1], nums2 = [2,2]\n<strong>Output:</strong> [2]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [4,9,5], nums2 = [9,4,9,8,4]\n<strong>Output:</strong> [9,4]\n<strong>Explanation:</strong> [4,9] is also accepted.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums1.length, nums2.length &lt;= 1000</code></li>\n\t<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 1000</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Binary Search",
+      "Hash Table",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "id": "0349-intersection-of-two-arrays",
+    "code": "class Solution:\n    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        set1 = set(nums1)\n        set2 = set(nums2)\n\n        return list(set1.intersection(set2))\n\n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "First Unique Character in a String",
+    "number": 387,
+    "url": "https://leetcode.com/problems/first-unique-character-in-a-string",
+    "difficulty": "Easy",
+    "description": "<p>Given a string <code>s</code>, find the <strong>first</strong> non-repeating character in it and return its index. If it <strong>does not</strong> exist, return <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;leetcode&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The character <code>&#39;l&#39;</code> at index 0 is the first character that does not occur at any other index.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;loveleetcode&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;aabb&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">-1</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s</code> consists of only lowercase English letters.</li>\n</ul>",
+    "topics": [
+      "Counting",
+      "Hash Table",
+      "Queue",
+      "String"
+    ],
+    "id": "0387-first-unique-character-in-a-string",
+    "code": "class Solution:\n    def firstUniqChar(self, s: str) -> int:\n        freq = {}\n\n        for i in s:\n            if i not in freq:\n                freq[i] = 1\n            else:\n                freq[i] += 1\n\n        for i in range(len(s)):\n            if freq[s[i]]==1:\n                return i\n\n        return -1        \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Fizz Buzz",
+    "number": 412,
+    "url": "https://leetcode.com/problems/fizz-buzz",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer <code>n</code>, return <em>a string array </em><code>answer</code><em> (<strong>1-indexed</strong>) where</em>:</p>\n\n<ul>\n\t<li><code>answer[i] == &quot;FizzBuzz&quot;</code> if <code>i</code> is divisible by <code>3</code> and <code>5</code>.</li>\n\t<li><code>answer[i] == &quot;Fizz&quot;</code> if <code>i</code> is divisible by <code>3</code>.</li>\n\t<li><code>answer[i] == &quot;Buzz&quot;</code> if <code>i</code> is divisible by <code>5</code>.</li>\n\t<li><code>answer[i] == i</code> (as a string) if none of the above conditions are true.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> n = 3\n<strong>Output:</strong> [\"1\",\"2\",\"Fizz\"]\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> n = 5\n<strong>Output:</strong> [\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]\n</pre><p><strong class=\"example\">Example 3:</strong></p>\n<pre><strong>Input:</strong> n = 15\n<strong>Output:</strong> [\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\",\"8\",\"Fizz\",\"Buzz\",\"11\",\"Fizz\",\"13\",\"14\",\"FizzBuzz\"]\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>\n</ul>",
+    "topics": [
+      "Math",
+      "Simulation",
+      "String"
+    ],
+    "id": "0412-fizz-buzz",
+    "code": "class Solution:\n    def fizzBuzz(self, n: int) -> List[str]:\n        ans = []\n\n        for i in range(1,n+1):\n            if i%3==0 and i%5==0:\n                ans.append(\"FizzBuzz\")\n            elif i%3==0:\n                ans.append(\"Fizz\")\n            elif i%5==0:\n                ans.append(\"Buzz\")\n            else:\n                ans.append(str(i)) \n\n        return ans                   \n",
+    "language": "python"
+  },
+  {
+    "title": "Fibonacci Number",
+    "number": 509,
+    "url": "https://leetcode.com/problems/fibonacci-number",
+    "difficulty": "Easy",
+    "description": "<p>The <b>Fibonacci numbers</b>, commonly denoted <code>F(n)</code> form a sequence, called the <b>Fibonacci sequence</b>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,</p>\n\n<pre>\nF(0) = 0, F(1) = 1\nF(n) = F(n - 1) + F(n - 2), for n &gt; 1.\n</pre>\n\n<p>Given <code>n</code>, calculate <code>F(n)</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> F(2) = F(1) + F(0) = 1 + 0 = 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> F(3) = F(2) + F(1) = 1 + 1 = 2.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 4\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> F(4) = F(3) + F(2) = 2 + 1 = 3.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= n &lt;= 30</code></li>\n</ul>",
+    "topics": [
+      "Dynamic Programming",
+      "Math",
+      "Memoization",
+      "Recursion"
+    ],
+    "id": "0509-fibonacci-number",
+    "code": "class Solution:\n    def fib(self, n: int) -> int:\n        #base case\n        if n==0 or n==1:\n            return n\n\n            #recursive case\n        return self.fib(n-1) + self.fib(n-2)    \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Reverse String II",
+    "number": 541,
+    "url": "https://leetcode.com/problems/reverse-string-ii",
+    "difficulty": "Easy",
+    "description": "<p>Given a string <code>s</code> and an integer <code>k</code>, reverse the first <code>k</code> characters for every <code>2k</code> characters counting from the start of the string.</p>\n\n<p>If there are fewer than <code>k</code> characters left, reverse all of them. If there are less than <code>2k</code> but greater than or equal to <code>k</code> characters, then reverse the first <code>k</code> characters and leave the other as original.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> s = \"abcdefg\", k = 2\n<strong>Output:</strong> \"bacdfeg\"\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> s = \"abcd\", k = 2\n<strong>Output:</strong> \"bacd\"\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of only lowercase English letters.</li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>\n</ul>",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "id": "0541-reverse-string-ii",
+    "code": "class Solution:\n    def reverseStr(self, s: str, k: int) -> str:\n        ans = \"\"\n        for i in range(0, len(s), 2*k):\n            ans += s[i:i+k][::-1] + s[i+k:i+2*k]\n        return ans    \n       \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Reverse Words in a String III",
+    "number": 557,
+    "url": "https://leetcode.com/problems/reverse-words-in-a-string-iii",
+    "difficulty": "Easy",
+    "description": "<p>Given a string <code>s</code>, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Let&#39;s take LeetCode contest&quot;\n<strong>Output:</strong> &quot;s&#39;teL ekat edoCteeL tsetnoc&quot;\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Mr Ding&quot;\n<strong>Output:</strong> &quot;rM gniD&quot;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>s</code> contains printable <strong>ASCII</strong> characters.</li>\n\t<li><code>s</code> does not contain any leading or trailing spaces.</li>\n\t<li>There is <strong>at least one</strong> word in <code>s</code>.</li>\n\t<li>All the words in <code>s</code> are separated by a single space.</li>\n</ul>",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "id": "0557-reverse-words-in-a-string-iii",
+    "code": "class Solution:\n    def reverseWords(self, s: str) -> str:\n        s = s.split()\n\n        for i in range(len(s)):\n            s[i] = s[i][::-1]\n\n        return \" \".join(s)    \n       \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Sort Array By Parity",
+    "number": 905,
+    "url": "https://leetcode.com/problems/sort-array-by-parity",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer array <code>nums</code>, move all the even integers at the beginning of the array followed by all the odd integers.</p>\n\n<p>Return <em><strong>any array</strong> that satisfies this condition</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,1,2,4]\n<strong>Output:</strong> [2,4,3,1]\n<strong>Explanation:</strong> The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0]\n<strong>Output:</strong> [0]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 5000</code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 5000</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "id": "0905-sort-array-by-parity",
+    "code": "class Solution:\n    def sortArrayByParity(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n\n        start = 0\n\n        for i in range(n):\n            if nums[i]%2==0:\n                temp = nums[i]\n                nums[i] = nums[start]\n                nums[start] = temp\n                start += 1\n\n        return nums        \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Defanging an IP Address",
+    "number": 1108,
+    "url": "https://leetcode.com/problems/defanging-an-ip-address",
+    "difficulty": "Easy",
+    "description": "<p>Given a valid (IPv4) IP <code>address</code>, return a defanged version of that IP address.</p>\n\n<p>A <em>defanged&nbsp;IP address</em>&nbsp;replaces every period <code>&quot;.&quot;</code> with <code>&quot;[.]&quot;</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> address = \"1.1.1.1\"\n<strong>Output:</strong> \"1[.]1[.]1[.]1\"\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> address = \"255.100.50.0\"\n<strong>Output:</strong> \"255[.]100[.]50[.]0\"\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The given <code>address</code> is a valid IPv4 address.</li>\n</ul>",
+    "topics": [
+      "String"
+    ],
+    "id": "1108-defanging-an-ip-address",
+    "code": "class Solution:\n    def defangIPaddr(self, address: str) -> str:\n        ans = \"\"\n        for i in address:\n            if i!=\".\":\n                ans+=i\n            else:\n                ans+=\"[.]\"    \n        return ans        \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Subtract the Product and Sum of Digits of an Integer",
+    "number": 1281,
+    "url": "https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer",
+    "difficulty": "Easy",
+    "description": "Given an integer number <code>n</code>, return the difference between the product of its digits and the sum of its digits.\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 234\n<strong>Output:</strong> 15 \n<b>Explanation:</b> \nProduct of digits = 2 * 3 * 4 = 24 \nSum of digits = 2 + 3 + 4 = 9 \nResult = 24 - 9 = 15\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 4421\n<strong>Output:</strong> 21\n<b>Explanation: \n</b>Product of digits = 4 * 4 * 2 * 1 = 32 \nSum of digits = 4 + 4 + 2 + 1 = 11 \nResult = 32 - 11 = 21\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10^5</code></li>\n</ul>",
+    "topics": [
+      "Math"
+    ],
+    "id": "1281-subtract-the-product-and-sum-of-digits-of-an-integer",
+    "code": "class Solution:\n    def subtractProductAndSum(self, n: int) -> int:\n        temp = n\n        sum_ = 0\n        product = 1\n\n        while temp>0:\n            r = temp%10\n            temp//=10\n            sum_ += r\n            product *= r\n\n        return product-sum_    \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "How Many Numbers Are Smaller Than the Current Number",
+    "number": 1365,
+    "url": "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number",
+    "difficulty": "Easy",
+    "description": "<p>Given the array <code>nums</code>, for each <code>nums[i]</code> find out how many numbers in the array are smaller than it. That is, for each <code>nums[i]</code> you have to count the number of valid <code>j&#39;s</code>&nbsp;such that&nbsp;<code>j != i</code> <strong>and</strong> <code>nums[j] &lt; nums[i]</code>.</p>\n\n<p>Return the answer in an array.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [8,1,2,2,3]\n<strong>Output:</strong> [4,0,1,1,3]\n<strong>Explanation:</strong> \nFor nums[0]=8 there exist four smaller numbers than it (1, 2, 2 and 3). \nFor nums[1]=1 does not exist any smaller number than it.\nFor nums[2]=2 there exist one smaller number than it (1). \nFor nums[3]=2 there exist one smaller number than it (1). \nFor nums[4]=3 there exist three smaller numbers than it (1, 2 and 2).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [6,5,4,8]\n<strong>Output:</strong> [2,1,0,3]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [7,7,7,7]\n<strong>Output:</strong> [0,0,0,0]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 500</code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 100</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Counting Sort",
+      "Hash Table",
+      "Sorting"
+    ],
+    "id": "1365-how-many-numbers-are-smaller-than-the-current-number",
+    "code": "class Solution:\n    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:\n        ans = []\n\n        for i in nums:\n            c = 0\n            for j in nums:\n                if j<i:\n                    c +=1\n            ans.append(c)   \n\n        return ans         ",
+    "language": "python"
+  },
+  {
+    "title": "Kids With the Greatest Number of Candies",
+    "number": 1431,
+    "url": "https://leetcode.com/problems/kids-with-the-greatest-number-of-candies",
+    "difficulty": "Easy",
+    "description": "<p>There are <code>n</code> kids with candies. You are given an integer array <code>candies</code>, where each <code>candies[i]</code> represents the number of candies the <code>i<sup>th</sup></code> kid has, and an integer <code>extraCandies</code>, denoting the number of extra candies that you have.</p>\n\n<p>Return <em>a boolean array </em><code>result</code><em> of length </em><code>n</code><em>, where </em><code>result[i]</code><em> is </em><code>true</code><em> if, after giving the </em><code>i<sup>th</sup></code><em> kid all the </em><code>extraCandies</code><em>, they will have the <strong>greatest</strong> number of candies among all the kids</em><em>, or </em><code>false</code><em> otherwise</em>.</p>\n\n<p>Note that <strong>multiple</strong> kids can have the <strong>greatest</strong> number of candies.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> candies = [2,3,5,1,3], extraCandies = 3\n<strong>Output:</strong> [true,true,true,false,true] \n<strong>Explanation:</strong> If you give all extraCandies to:\n- Kid 1, they will have 2 + 3 = 5 candies, which is the greatest among the kids.\n- Kid 2, they will have 3 + 3 = 6 candies, which is the greatest among the kids.\n- Kid 3, they will have 5 + 3 = 8 candies, which is the greatest among the kids.\n- Kid 4, they will have 1 + 3 = 4 candies, which is not the greatest among the kids.\n- Kid 5, they will have 3 + 3 = 6 candies, which is the greatest among the kids.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> candies = [4,2,1,1,2], extraCandies = 1\n<strong>Output:</strong> [true,false,false,false,false] \n<strong>Explanation:</strong> There is only 1 extra candy.\nKid 1 will always have the greatest number of candies, even if a different kid is given the extra candy.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> candies = [12,1,12], extraCandies = 10\n<strong>Output:</strong> [true,false,true]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == candies.length</code></li>\n\t<li><code>2 &lt;= n &lt;= 100</code></li>\n\t<li><code>1 &lt;= candies[i] &lt;= 100</code></li>\n\t<li><code>1 &lt;= extraCandies &lt;= 50</code></li>\n</ul>",
+    "topics": [
+      "Array"
+    ],
+    "id": "1431-kids-with-the-greatest-number-of-candies",
+    "code": "class Solution:\n    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:\n        maxCandies = max(candies)\n        ans = []\n\n        for i in candies:\n            if (i+extraCandies)>=maxCandies:\n                ans.append(True)\n            else:\n                ans.append(False)\n        return ans            \n        \n        ",
+    "language": "python"
+  },
+  {
+    "title": "Running Sum of 1d Array",
+    "number": 1480,
+    "url": "https://leetcode.com/problems/running-sum-of-1d-array",
+    "difficulty": "Easy",
+    "description": "<p>Given an array <code>nums</code>. We define a running sum of an array as&nbsp;<code>runningSum[i] = sum(nums[0]&hellip;nums[i])</code>.</p>\n\n<p>Return the running sum of <code>nums</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,3,4]\n<strong>Output:</strong> [1,3,6,10]\n<strong>Explanation:</strong> Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,1,1,1]\n<strong>Output:</strong> [1,2,3,4,5]\n<strong>Explanation:</strong> Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,1,2,10,1]\n<strong>Output:</strong> [3,4,6,16,17]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 1000</code></li>\n\t<li><code>-10^6&nbsp;&lt;= nums[i] &lt;=&nbsp;10^6</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Prefix Sum"
+    ],
+    "id": "1480-running-sum-of-1d-array",
+    "code": "class Solution:\n    def runningSum(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n        ans = []\n        ans.append(nums[0])\n\n        for i in range(1,n):\n            x = ans[i-1] + nums[i]\n            ans.append(x)\n\n        return ans    \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Count Odd Numbers in an Interval Range",
+    "number": 1523,
+    "url": "https://leetcode.com/problems/count-odd-numbers-in-an-interval-range",
+    "difficulty": "Easy",
+    "description": "<p>Given two non-negative integers <code>low</code> and <code><font face=\"monospace\">high</font></code>. Return the <em>count of odd numbers between </em><code>low</code><em> and </em><code><font face=\"monospace\">high</font></code><em>&nbsp;(inclusive)</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> low = 3, high = 7\n<strong>Output:</strong> 3\n<b>Explanation: </b>The odd numbers between 3 and 7 are [3,5,7].</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> low = 8, high = 10\n<strong>Output:</strong> 1\n<b>Explanation: </b>The odd numbers between 8 and 10 are [9].</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= low &lt;= high&nbsp;&lt;= 10^9</code></li>\n</ul>",
+    "topics": [
+      "Math"
+    ],
+    "id": "1523-count-odd-numbers-in-an-interval-range",
+    "code": "class Solution:\n    def countOdds(self, low: int, high: int) -> int:\n      return (high+1)//2 - (low//2)\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Richest Customer Wealth",
+    "number": 1672,
+    "url": "https://leetcode.com/problems/richest-customer-wealth",
+    "difficulty": "Easy",
+    "description": "<p>You are given an <code>m x n</code> integer grid <code>accounts</code> where <code>accounts[i][j]</code> is the amount of money the <code>i​​​​​<sup>​​​​​​th</sup>​​​​</code> customer has in the <code>j​​​​​<sup>​​​​​​th</sup></code>​​​​ bank. Return<em> the <strong>wealth</strong> that the richest customer has.</em></p>\n\n<p>A customer&#39;s <strong>wealth</strong> is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum <strong>wealth</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> accounts = [[1,2,3],[3,2,1]]\n<strong>Output:</strong> 6\n<strong>Explanation</strong><strong>:</strong>\n<code>1st customer has wealth = 1 + 2 + 3 = 6\n</code><code>2nd customer has wealth = 3 + 2 + 1 = 6\n</code>Both customers are considered the richest with a wealth of 6 each, so return 6.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> accounts = [[1,5],[7,3],[3,5]]\n<strong>Output:</strong> 10\n<strong>Explanation</strong>: \n1st customer has wealth = 6\n2nd customer has wealth = 10 \n3rd customer has wealth = 8\nThe 2nd customer is the richest with a wealth of 10.</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> accounts = [[2,8,7],[7,1,3],[1,9,5]]\n<strong>Output:</strong> 17\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>m ==&nbsp;accounts.length</code></li>\n\t<li><code>n ==&nbsp;accounts[i].length</code></li>\n\t<li><code>1 &lt;= m, n &lt;= 50</code></li>\n\t<li><code>1 &lt;= accounts[i][j] &lt;= 100</code></li>\n</ul>",
+    "topics": [
+      "Array",
+      "Matrix"
+    ],
+    "id": "1672-richest-customer-wealth",
+    "code": "class Solution:\n    def maximumWealth(self, accounts: List[List[int]]) -> int:\n        ans = 0\n        for account in accounts:\n            ans = max(ans,sum(account))\n\n        return ans    \n\n\n\n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Substrings of Size Three with Distinct Characters",
+    "number": 1876,
+    "url": "https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters",
+    "difficulty": "Easy",
+    "description": "<p>A string is <strong>good</strong> if there are no repeated characters.</p>\n\n<p>Given a string <code>s</code>​​​​​, return <em>the number of <strong>good substrings</strong> of length <strong>three </strong>in </em><code>s</code>​​​​​​.</p>\n\n<p>Note that if there are multiple occurrences of the same substring, every occurrence should be counted.</p>\n\n<p>A <strong>substring</strong> is a contiguous sequence of characters in a string.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;xyzzaz&quot;\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> There are 4 substrings of size 3: &quot;xyz&quot;, &quot;yzz&quot;, &quot;zza&quot;, and &quot;zaz&quot;. \nThe only good substring of length 3 is &quot;xyz&quot;.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;aababcabc&quot;\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> There are 7 substrings of size 3: &quot;aab&quot;, &quot;aba&quot;, &quot;bab&quot;, &quot;abc&quot;, &quot;bca&quot;, &quot;cab&quot;, and &quot;abc&quot;.\nThe good substrings are &quot;abc&quot;, &quot;bca&quot;, &quot;cab&quot;, and &quot;abc&quot;.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code>​​​​​​ consists of lowercase English letters.</li>\n</ul>",
+    "topics": [
+      "Counting",
+      "Hash Table",
+      "Sliding Window",
+      "String"
+    ],
+    "id": "1876-substrings-of-size-three-with-distinct-characters",
+    "code": "class Solution:\n    def countGoodSubstrings(self, s: str) -> int:\n        n = len(s)\n        ans = 0\n\n        for i in range(0,n-2):\n            if s[i]!=s[i+1] and s[i+1]!=s[i+2] and s[i+2]!=s[i]:\n               ans+=1\n\n        return ans        \n\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Count the Digits That Divide a Number",
+    "number": 2520,
+    "url": "https://leetcode.com/problems/count-the-digits-that-divide-a-number",
+    "difficulty": "Easy",
+    "description": "<p>Given an integer <code>num</code>, return <em>the number of digits in <code>num</code> that divide </em><code>num</code>.</p>\n\n<p>An integer <code>val</code> divides <code>nums</code> if <code>nums % val == 0</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 7\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> 7 divides itself, hence the answer is 1.\n</pre>\n\n<p><strong>Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 121\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> 121 is divisible by 1, but not 2. Since 1 occurs twice as a digit, we return 2.\n</pre>\n\n<p><strong>Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 1248\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> 1248 is divisible by all of its digits, hence the answer is 4.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num &lt;= 10<sup>9</sup></code></li>\n\t<li><code>num</code> does not contain <code>0</code> as one of its digits.</li>\n</ul>",
+    "topics": [
+      "Math"
+    ],
+    "id": "2520-count-the-digits-that-divide-a-number",
+    "code": "class Solution:\n    def countDigits(self, num: int) -> int:\n        temp = num\n        ans = 0\n\n        while temp>0:\n            r = temp%10\n            if num%r == 0:\n                ans += 1\n            temp//=10\n\n        return ans     \n       ",
+    "language": "python"
+  },
+  {
+    "title": "Reverse Degree of a String",
+    "number": 3498,
+    "url": "https://leetcode.com/problems/reverse-degree-of-a-string",
+    "difficulty": "Easy",
+    "description": "<p>Given a string <code>s</code>, calculate its <strong>reverse degree</strong>.</p>\n\n<p>The <strong>reverse degree</strong> is calculated as follows:</p>\n\n<ol>\n\t<li>For each character, multiply its position in the <em>reversed</em> alphabet (<code>&#39;a&#39;</code> = 26, <code>&#39;b&#39;</code> = 25, ..., <code>&#39;z&#39;</code> = 1) with its position in the string <strong>(1-indexed)</strong>.</li>\n\t<li>Sum these products for all characters in the string.</li>\n</ol>\n\n<p>Return the <strong>reverse degree</strong> of <code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;abc&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">148</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<table style=\"border: 1px solid black;\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<th style=\"border: 1px solid black;\">Letter</th>\n\t\t\t<th style=\"border: 1px solid black;\">Index in Reversed Alphabet</th>\n\t\t\t<th style=\"border: 1px solid black;\">Index in String</th>\n\t\t\t<th style=\"border: 1px solid black;\">Product</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;a&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">26</td>\n\t\t\t<td style=\"border: 1px solid black;\">1</td>\n\t\t\t<td style=\"border: 1px solid black;\">26</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;b&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">25</td>\n\t\t\t<td style=\"border: 1px solid black;\">2</td>\n\t\t\t<td style=\"border: 1px solid black;\">50</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;c&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">24</td>\n\t\t\t<td style=\"border: 1px solid black;\">3</td>\n\t\t\t<td style=\"border: 1px solid black;\">72</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>The reversed degree is <code>26 + 50 + 72 = 148</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zaza&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">160</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<table style=\"border: 1px solid black;\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<th style=\"border: 1px solid black;\">Letter</th>\n\t\t\t<th style=\"border: 1px solid black;\">Index in Reversed Alphabet</th>\n\t\t\t<th style=\"border: 1px solid black;\">Index in String</th>\n\t\t\t<th style=\"border: 1px solid black;\">Product</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;z&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">1</td>\n\t\t\t<td style=\"border: 1px solid black;\">1</td>\n\t\t\t<td style=\"border: 1px solid black;\">1</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;a&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">26</td>\n\t\t\t<td style=\"border: 1px solid black;\">2</td>\n\t\t\t<td style=\"border: 1px solid black;\">52</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;z&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">1</td>\n\t\t\t<td style=\"border: 1px solid black;\">3</td>\n\t\t\t<td style=\"border: 1px solid black;\">3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\"><code>&#39;a&#39;</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">26</td>\n\t\t\t<td style=\"border: 1px solid black;\">4</td>\n\t\t\t<td style=\"border: 1px solid black;\">104</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>The reverse degree is <code>1 + 52 + 3 + 104 = 160</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 1000</code></li>\n\t<li><code>s</code> contains only lowercase English letters.</li>\n</ul>",
+    "topics": [
+      "Simulation",
+      "String"
+    ],
+    "id": "3498-reverse-degree-of-a-string",
+    "code": "class Solution:\n    def reverseDegree(self, s: str) -> int:\n        return sum(i * (26 -(ord(c) - 97)) for i, c in enumerate(s,1))\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Reverse String Prefix",
+    "number": 3794,
+    "url": "https://leetcode.com/problems/reverse-string-prefix",
+    "difficulty": "Easy",
+    "description": "<p>You are given a string <code>s</code> and an integer <code>k</code>.</p>\n\n<p>Reverse the first <code>k</code> characters of <code>s</code> and return the resulting string.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;abcd&quot;, k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;bacd&quot;</span></p>\n\n<p><strong>Explanation:</strong>​​​​​​​</p>\n\n<p>The first <code>k = 2</code> characters <code>&quot;ab&quot;</code> are reversed to <code>&quot;ba&quot;</code>. The final resulting string is <code>&quot;bacd&quot;</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;xyz&quot;, k = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;zyx&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The first <code>k = 3</code> characters <code>&quot;xyz&quot;</code> are reversed to <code>&quot;zyx&quot;</code>. The final resulting string is <code>&quot;zyx&quot;</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;hey&quot;, k = 1</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;hey&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The first <code>k = 1</code> character <code>&quot;h&quot;</code> remains unchanged on reversal. The final resulting string is <code>&quot;hey&quot;</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code> consists of lowercase English letters.</li>\n\t<li><code>1 &lt;= k &lt;= s.length</code></li>\n</ul>",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "id": "3794-reverse-string-prefix",
+    "code": "class Solution:\n    def reversePrefix(self, s: str, k: int) -> str:\n        return s[:k][::-1] + s[k:]\n        ",
+    "language": "python"
+  },
+  {
+    "title": "Largest Even Number",
+    "number": 3798,
+    "url": "https://leetcode.com/problems/largest-even-number",
+    "difficulty": "Easy",
+    "description": "<p>You are given a string <code>s</code> consisting only of the characters <code>&#39;1&#39;</code> and <code>&#39;2&#39;</code>.</p>\n\n<p>You may delete any number of characters from <code>s</code> without changing the order of the remaining characters.</p>\n\n<p>Return the <strong>largest possible resultant string</strong> that represents an <strong>even</strong> integer. If there is no such string, return the empty string <code>&quot;&quot;</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;1112&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;1112&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The string already represents the largest possible even number, so no deletions are needed.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;221&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;22&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Deleting <code>&#39;1&#39;</code> results in the largest possible even number which is equal to 22.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;1&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>There is no way to get an even number.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code> consists only of the characters <code>&#39;1&#39;</code> and <code>&#39;2&#39;</code>.</li>\n</ul>",
+    "topics": [
+      "String"
+    ],
+    "id": "3798-largest-even-number",
+    "code": "class Solution:\n    def largestEven(self, s: str) -> str:\n        last = s.rfind('2')\n\n        if last == -1:\n            return \"\"\n\n        return s[:last + 1]            ",
+    "language": "python"
+  }
+]

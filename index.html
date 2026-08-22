@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive, high-performance web dashboard showcasing LeetCode solutions. Search, filter, and view clean python solutions.">
+    <title>LeetCode Solutions Dashboard</title>
+    <!-- Google Fonts: Outfit & Fira Code for syntax -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Prism.js Dark Theme for Code Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation & Filters -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <h2>LeetCode<span>Hub</span></h2>
+            </div>
+            
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Search problems...">
+            </div>
+
+            <div class="filter-section">
+                <h3>Difficulty</h3>
+                <div class="difficulty-filters">
+                    <button class="diff-btn easy active" data-diff="Easy">
+                        <span class="dot"></span> Easy
+                    </button>
+                    <button class="diff-btn medium active" data-diff="Medium">
+                        <span class="dot"></span> Medium
+                    </button>
+                    <button class="diff-btn hard active" data-diff="Hard">
+                        <span class="dot"></span> Hard
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Topics</h3>
+                <div class="topics-container" id="topics-list">
+                    <!-- Dynamic topic badges will go here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header section with Stats -->
+            <header class="dashboard-header">
+                <div class="welcome-text">
+                    <h1>My Solutions Progress</h1>
+                    <p>Keep grinding, one algorithm at a time.</p>
+                </div>
+                
+                <div class="stats-panel">
+                    <div class="stat-card">
+                        <div class="stat-val" id="total-count">0</div>
+                        <div class="stat-lbl">Solved</div>
+                    </div>
+                    <div class="stat-card easy-stat">
+                        <div class="stat-val" id="easy-count">0</div>
+                        <div class="stat-lbl">Easy</div>
+                    </div>
+                    <div class="stat-card medium-stat">
+                        <div class="stat-val" id="medium-count">0</div>
+                        <div class="stat-lbl">Medium</div>
+                    </div>
+                    <div class="stat-card hard-stat">
+                        <div class="stat-val" id="hard-count">0</div>
+                        <div class="stat-lbl">Hard</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Active Filters Indicators -->
+            <div class="active-filters" id="active-filters-bar">
+                <!-- Dynamic active filters will be shown here -->
+            </div>
+
+            <!-- Problems Grid -->
+            <section class="problems-section">
+                <div class="grid-header">
+                    <h2>Solutions List (<span id="showing-count">0</span>)</h2>
+                    <div class="sorting-controls">
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select">
+                            <option value="number-asc">Problem Number (Asc)</option>
+                            <option value="number-desc">Problem Number (Desc)</option>
+                            <option value="name-asc">Alphabetical (A-Z)</option>
+                            <option value="difficulty-asc">Difficulty (Easy -> Hard)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="problems-grid" id="problems-grid">
+                    <!-- Dynamic problem cards will go here -->
+                </div>
+                
+                <div class="empty-state" id="empty-state">
+                    <i data-lucide="folder-open"></i>
+                    <h3>No problems found</h3>
+                    <p>Try adjusting your search criteria or select other topics.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal View for Problem Solution Details -->
+    <div class="modal-overlay" id="solution-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="modal-header-info">
+                        <span class="difficulty-badge" id="modal-difficulty">Easy</span>
+                        <h2 id="modal-title">1. Two Sum</h2>
+                        <div class="modal-topics" id="modal-topics">
+                            <!-- Tags -->
+                        </div>
+                    </div>
+                    <div class="modal-description" id="modal-description">
+                        <!-- Raw HTML problem description -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" target="_blank" class="leetcode-btn" id="modal-leetcode-link">
+                            <i data-lucide="external-link"></i> View on LeetCode
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="modal-right">
+                    <div class="code-header">
+                        <span class="code-title"><i data-lucide="file-code"></i> solution.py</span>
+                        <button class="copy-btn" id="copy-code-btn">
+                            <i data-lucide="copy"></i> Copy Code
+                        </button>
+                    </div>
+                    <div class="code-body">
+                        <pre><code class="language-python" id="modal-code"># Solution code goes here</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prism JS for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
