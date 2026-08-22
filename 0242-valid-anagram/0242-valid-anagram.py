@@ -1,6 +1,6 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        if len(s)!=len(t):
+        if len(s) != len(t):
             return False
 
         freq = {}
@@ -16,12 +16,6 @@ class Solution:
             else:
                 freq[i] -= 1
         for i in freq.values():
-            if i!=0:
+            if i != 0:
                 return False
-        return True                
-
-        
-        
-
-        
-        
+        return True
