@@ -9,8 +9,7 @@ class Solution:
                 temp = nums[i]
                 nums[i] = nums[start]
                 nums[start] = temp
-                start += 1
+                start+=1
 
         return nums        
-
-        
+       
