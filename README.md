@@ -15,6 +15,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
 | [0509-fibonacci-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0509-fibonacci-number/) | Easy |
 | [1281-subtract-the-product-and-sum-of-digits-of-an-integer](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1281-subtract-the-product-and-sum-of-digits-of-an-integer/) | Easy |
+| [1512-number-of-good-pairs](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1512-number-of-good-pairs/) | Easy |
 | [1523-count-odd-numbers-in-an-interval-range](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1523-count-odd-numbers-in-an-interval-range/) | Easy |
 | [2520-count-the-digits-that-divide-a-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/2520-count-the-digits-that-divide-a-number/) | Easy |
 ## Bit Manipulation
@@ -72,6 +73,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1431-kids-with-the-greatest-number-of-candies](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1431-kids-with-the-greatest-number-of-candies/) | Easy |
 | [1470-shuffle-the-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1470-shuffle-the-array/) | Easy |
 | [1480-running-sum-of-1d-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1480-running-sum-of-1d-array/) | Easy |
+| [1512-number-of-good-pairs](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1512-number-of-good-pairs/) | Easy |
 | [1672-richest-customer-wealth](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1672-richest-customer-wealth/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
@@ -147,6 +149,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0387-first-unique-character-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0387-first-unique-character-in-a-string/) | Easy |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
+| [1512-number-of-good-pairs](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1512-number-of-good-pairs/) | Easy |
 | [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 ## Binary Search
 | Problem Name | Difficulty |
@@ -162,6 +165,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0347-top-k-frequent-elements](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0347-top-k-frequent-elements/) | Medium |
 | [0387-first-unique-character-in-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0387-first-unique-character-in-a-string/) | Easy |
+| [1512-number-of-good-pairs](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1512-number-of-good-pairs/) | Easy |
 | [1876-substrings-of-size-three-with-distinct-characters](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 ## Sliding Window
 | Problem Name | Difficulty |
