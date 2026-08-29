@@ -77,6 +77,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1480-running-sum-of-1d-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1480-running-sum-of-1d-array/) | Easy |
 | [1512-number-of-good-pairs](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1512-number-of-good-pairs/) | Easy |
 | [1672-richest-customer-wealth](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1672-richest-customer-wealth/) | Easy |
+| [1929-concatenation-of-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1929-concatenation-of-array/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -137,6 +138,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0054-spiral-matrix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0054-spiral-matrix/) | Medium |
 | [0059-spiral-matrix-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0059-spiral-matrix-ii/) | Medium |
 | [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
+| [1929-concatenation-of-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1929-concatenation-of-array/) | Easy |
 | [3498-reverse-degree-of-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3498-reverse-degree-of-a-string/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
