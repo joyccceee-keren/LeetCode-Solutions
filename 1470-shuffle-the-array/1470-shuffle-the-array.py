@@ -1,8 +1,9 @@
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
-        res = []
+        ans = []
         for i in range(n):
-            res.append(nums[i])
-            res.append(nums[i+n])
-        return res    
+            ans.append(nums[i])
+            ans.append(nums[i+n])
+        return ans    
+
        
