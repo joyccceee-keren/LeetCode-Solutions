@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0009-palindrome-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0009-palindrome-number/) | Easy |
 | [0050-powx-n](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0050-powx-n/) | Medium |
+| [0066-plus-one](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0066-plus-one/) | Easy |
 | [0202-happy-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0202-happy-number/) | Easy |
 | [0231-power-of-two](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0231-power-of-two/) | Easy |
 | [0326-power-of-three](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0326-power-of-three/) | Easy |
@@ -61,6 +62,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0053-maximum-subarray](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0053-maximum-subarray/) | Medium |
 | [0054-spiral-matrix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0054-spiral-matrix/) | Medium |
 | [0059-spiral-matrix-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0059-spiral-matrix-ii/) | Medium |
+| [0066-plus-one](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0066-plus-one/) | Easy |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0080-remove-duplicates-from-sorted-array-ii/) | Medium |
 | [0088-merge-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0088-merge-sorted-array/) | Easy |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
