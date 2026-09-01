@@ -5,5 +5,4 @@ class Solution:
             if len(str(i)) % 2 == 0:
                 ans += 1
         return ans        
-
         
