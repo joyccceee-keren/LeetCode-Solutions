@@ -72,6 +72,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0283-move-zeroes](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0283-move-zeroes/) | Easy |
 | [0347-top-k-frequent-elements](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0347-top-k-frequent-elements/) | Medium |
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
+| [0485-max-consecutive-ones](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0485-max-consecutive-ones/) | Easy |
 | [0905-sort-array-by-parity](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0905-sort-array-by-parity/) | Easy |
 | [1295-find-numbers-with-even-number-of-digits](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1295-find-numbers-with-even-number-of-digits/) | Easy |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
