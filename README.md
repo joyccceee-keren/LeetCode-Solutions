@@ -75,6 +75,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0347-top-k-frequent-elements](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0347-top-k-frequent-elements/) | Medium |
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0485-max-consecutive-ones/) | Easy |
+| [0682-baseball-game](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0682-baseball-game/) | Easy |
 | [0905-sort-array-by-parity](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0905-sort-array-by-parity/) | Easy |
 | [1295-find-numbers-with-even-number-of-digits](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1295-find-numbers-with-even-number-of-digits/) | Easy |
 | [1299-replace-elements-with-greatest-element-on-right-side](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1299-replace-elements-with-greatest-element-on-right-side/) | Easy |
@@ -150,6 +151,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0054-spiral-matrix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0054-spiral-matrix/) | Medium |
 | [0059-spiral-matrix-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0059-spiral-matrix-ii/) | Medium |
 | [0412-fizz-buzz](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0412-fizz-buzz/) | Easy |
+| [0682-baseball-game](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0682-baseball-game/) | Easy |
 | [1929-concatenation-of-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1929-concatenation-of-array/) | Easy |
 | [3498-reverse-degree-of-a-string](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3498-reverse-degree-of-a-string/) | Easy |
 ## Hash Table
@@ -220,6 +222,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0020-valid-parentheses](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0020-valid-parentheses/) | Easy |
+| [0682-baseball-game](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0682-baseball-game/) | Easy |
 ## Bracket Sequences
 | Problem Name | Difficulty |
 | ------- | ------- |
