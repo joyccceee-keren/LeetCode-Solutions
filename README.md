@@ -77,6 +77,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0485-max-consecutive-ones](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0485-max-consecutive-ones/) | Easy |
 | [0682-baseball-game](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0682-baseball-game/) | Easy |
 | [0905-sort-array-by-parity](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0905-sort-array-by-parity/) | Easy |
+| [0977-squares-of-a-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0977-squares-of-a-sorted-array/) | Easy |
 | [1295-find-numbers-with-even-number-of-digits](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1295-find-numbers-with-even-number-of-digits/) | Easy |
 | [1299-replace-elements-with-greatest-element-on-right-side](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1299-replace-elements-with-greatest-element-on-right-side/) | Easy |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
@@ -109,6 +110,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0541-reverse-string-ii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0541-reverse-string-ii/) | Easy |
 | [0557-reverse-words-in-a-string-iii](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0557-reverse-words-in-a-string-iii/) | Easy |
 | [0905-sort-array-by-parity](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0905-sort-array-by-parity/) | Easy |
+| [0977-squares-of-a-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0977-squares-of-a-sorted-array/) | Easy |
 | [3794-reverse-string-prefix](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/3794-reverse-string-prefix/) | Easy |
 ## Sorting
 | Problem Name | Difficulty |
@@ -120,6 +122,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0347-top-k-frequent-elements](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0347-top-k-frequent-elements/) | Medium |
 | [0349-intersection-of-two-arrays](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0905-sort-array-by-parity](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0905-sort-array-by-parity/) | Easy |
+| [0977-squares-of-a-sorted-array](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/0977-squares-of-a-sorted-array/) | Easy |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/joyccceee-keren/LeetCode-Solutions/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
 ## Divide and Conquer
 | Problem Name | Difficulty |
