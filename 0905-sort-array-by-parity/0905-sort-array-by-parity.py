@@ -9,5 +9,4 @@ class Solution:
                 nums[start] = temp
                 start += 1
         return nums        
-            
         
