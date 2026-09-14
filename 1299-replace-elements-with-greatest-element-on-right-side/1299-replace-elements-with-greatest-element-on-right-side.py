@@ -8,6 +8,5 @@ class Solution:
             newMax = max(rightMax, arr[i])
             arr[i] = rightMax
             rightMax = newMax
-        return arr
-
+        return arr    
        
