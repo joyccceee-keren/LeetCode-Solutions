@@ -4,7 +4,6 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] in dict1:
                 return True
-            dict1[nums[i]] = i
-        return False        
+            dict1[nums[i]] = i 
+        return False       
         
-          
