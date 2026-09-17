@@ -6,6 +6,5 @@ class Solution:
             if nums[i] != nums[start]:
                 start += 1
                 nums[start] = nums[i]
-        return start+1        
-
-        
+        return start+1       
+       
