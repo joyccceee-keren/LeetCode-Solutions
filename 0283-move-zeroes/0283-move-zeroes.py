@@ -10,5 +10,6 @@ class Solution:
                 nums[r] = nums[l]
                 nums[l] = temp
                 l += 1
-        return nums        
+        return l        
+
        
