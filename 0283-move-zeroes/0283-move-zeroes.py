@@ -7,8 +7,8 @@ class Solution:
         for r in range(len(nums)):
             if nums[r]:
                 temp = nums[r]
-                nums[r]=nums[l]
-                nums[l]=temp
+                nums[r] = nums[l]
+                nums[l] = temp
                 l += 1
         return nums        
-        
+       
