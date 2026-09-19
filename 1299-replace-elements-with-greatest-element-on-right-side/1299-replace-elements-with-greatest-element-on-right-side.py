@@ -9,5 +9,5 @@ class Solution:
             arr[i] = rightMax
             rightMax = newMax
         return arr    
-            
-        
+
+       
