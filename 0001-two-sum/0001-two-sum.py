@@ -7,6 +7,4 @@ class Solution:
             if rem in dict1:
                 return(dict1[rem],i)
             dict1[nums[i]] = i    
-
-
-      
+        
