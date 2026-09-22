@@ -7,4 +7,5 @@ class Solution:
             x = ans[i-1] + nums[i]
             ans.append(x)
         return ans    
+
        
