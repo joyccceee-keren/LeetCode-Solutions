@@ -3,10 +3,5 @@ class Solution:
         s = s.strip()
         s = s.split()
         s.reverse()
-        return" ".join(s)
-
-     
-
-   
-        
+        return " ".join(s)
         
