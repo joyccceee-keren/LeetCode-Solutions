@@ -4,5 +4,5 @@ class Solution:
         ans = 0
         for n,c in count.items():
             ans += c*(c-1)//2
-        return ans    
-      
+        return ans       
+        
