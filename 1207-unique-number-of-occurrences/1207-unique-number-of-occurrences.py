@@ -6,13 +6,11 @@ class Solution:
                 dict1[nums] += 1
             else:
                 dict1[nums] = 1
-
         occurrences = set()
         for count in dict1.values():
-            if count in occurrences:
+            if count in occurrences: 
                 return False
             occurrences.add(count)
-        return True                    
-
-
+        return True                   
+        
        
