@@ -8,4 +8,5 @@ class Solution:
                     return True
             dict1[nums[i]] = i
         return False            
-      
+
+       
