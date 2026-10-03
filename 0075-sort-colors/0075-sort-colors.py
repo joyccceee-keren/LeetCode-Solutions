@@ -10,7 +10,7 @@ class Solution:
             temp = nums[i]
             nums[i] = nums[j]
             nums[j] = temp
-        while i <= r:
+        while i<=r:
             if nums[i] == 0:
                 swap(l,i)
                 l += 1
@@ -19,5 +19,4 @@ class Solution:
                 swap(i,r)
                 r -= 1
             else:
-                i += 1            
-       
+                i += 1    
