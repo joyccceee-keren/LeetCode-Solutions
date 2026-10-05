@@ -10,4 +10,5 @@ class Solution:
             if l<=r and remain>=people[l]:
                 l += 1
         return ans        
-       
+
+        
