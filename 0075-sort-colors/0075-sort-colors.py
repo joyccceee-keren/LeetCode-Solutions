@@ -3,6 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        
         l = 0
         i = 0
         r = len(nums)-1
@@ -19,4 +20,5 @@ class Solution:
                 swap(i,r)
                 r -= 1
             else:
-                i += 1    
+                i += 1
+       
