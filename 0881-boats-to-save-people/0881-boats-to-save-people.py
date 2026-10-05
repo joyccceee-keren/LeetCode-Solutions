@@ -7,10 +7,7 @@ class Solution:
             remain = limit - people[r]
             r -= 1
             ans += 1
-            if l<=r and remain >= people[l]:
+            if l<=r and remain>=people[l]:
                 l += 1
-           
-        return ans    
-
-       
+        return ans        
        
