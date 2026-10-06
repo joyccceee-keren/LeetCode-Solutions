@@ -20,4 +20,4 @@ class Solution:
                 r -= 1
             else:
                 i += 1            
-      
+       
