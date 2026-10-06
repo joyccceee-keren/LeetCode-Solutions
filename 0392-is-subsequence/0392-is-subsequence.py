@@ -9,6 +9,4 @@ class Solution:
 
         return True if i == len(s) else False       
               
-
-
-        
+       
