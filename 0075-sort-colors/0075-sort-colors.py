@@ -16,13 +16,15 @@ class Solution:
                 l += 1
                 i += 1
             elif nums[i] == 2:
-                swap(r,i)
+                swap(i,r)
                 r -= 1
             else:
-                i += 1        
+                i += 1
 
-            
+        
+
+
 
 
          
-       
+        
