@@ -5,9 +5,9 @@ class Solution:
         while l<=r:
             area = (r-l)*min(height[l],height[r])
             ans = max(ans,area)
+
             if height[l]<height[r]:
                 l += 1
             else:
                 r -= 1
         return ans            
-       
