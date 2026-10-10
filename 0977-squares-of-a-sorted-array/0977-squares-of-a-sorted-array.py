@@ -9,7 +9,7 @@ class Solution:
             else:
                 ans.append(nums[r]*nums[r])
                 r -= 1
-        return ans[::-1]            
-      
+        return ans[::-1]        
 
-       
+
+        
