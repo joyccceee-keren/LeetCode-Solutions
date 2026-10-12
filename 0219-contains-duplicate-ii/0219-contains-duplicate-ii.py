@@ -7,6 +7,5 @@ class Solution:
                 if i-dict1[nums[i]]<=k:
                     return True
             dict1[nums[i]] = i
-        return False    
-
-       
+        return False            
+        
