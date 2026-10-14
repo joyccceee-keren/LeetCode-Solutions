@@ -8,4 +8,4 @@ class Solution:
             dict1[nums[i]] = i
         return False        
 
-        
+       
