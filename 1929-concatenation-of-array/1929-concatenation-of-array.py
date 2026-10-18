@@ -5,5 +5,5 @@ class Solution:
             for n in nums:
                 ans.append(n)
         return ans        
-            
+       
        
